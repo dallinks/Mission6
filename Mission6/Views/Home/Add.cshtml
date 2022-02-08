@@ -1,0 +1,47 @@
+﻿@{
+    ViewData['Title'] = "Add Tasks";
+}
+
+@model Mission6.Models.ToDoItem;
+
+<h1>Add Task</h1>
+
+<!--Input form to add tasks-->
+<form method="post">
+    <!--Show data validation errors-->
+    <div asp-validation-summary="All"></div>
+
+    <label asp-for="Task">Task Description: </label>
+    <input asp-for="Task"/>
+
+    <label asp-for="DueDate">Due Date: </label>
+    <input asp-for="DueDate"/>
+
+    <label asp-for="Quadrant">Quadrant: </label>
+    <select asp-for="Quadrant">
+        <option value="">Choose a Quadrant</option>
+        <option value="Quadrant_1">Quadrant 1</option>
+        <option value="Quadrant_2">Quadrant 2</option>
+        <option value="Quadrant_3">Quadrant 3</option>
+        <option value="Quadrant_4">Quadrant 4</option>
+    </select>
+
+    <label asp-for="Category.CategoryName">Category: </label>
+    <select asp-for="Category.CategoryName">
+        <option value="">Choose a category</option>
+
+        <!--Loop through each category to populate the drop down (feel free to change the variable names as needed)-->
+        @foreach (Category c in ViewBag.Categories)
+        {
+        <option value="@c.CategoryId">@c.CategoryName</option>
+        }
+    </select>
+
+    <label asp-for="Completed">Completed: </label>
+    <select asp-for="Completed">
+        <opotion value="false">No</opotion>
+        <option value="true">Yes</option>
+    </select>
+
+    <button type="submit" class="btn-light">Add</button>
+</form>
