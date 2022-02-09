@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Delete";
+}
+
+@model ToDoItem
+
+<h2>Confirm you want to delete this item:</h2>
+
+<h4>Task: @Model.Task</h4>
+<h4>Due Date: @Model.Task</h4>
+<h4>Quadrant: @Model.Task</h4>
+<h4>Category: @Model.Category.CategoryName</h4>
+<h4>Complete? @Model.Completed</h4>
+
+<form method="post" asp-action="Delete">
+    <button type="submit">Delete</button>
+    <a asp-controller="Home" asp-action="Quadrants" class="btn btn-primary">Cancel</a>
+    <input type="hidden" asp-for="ToDoItemId"/>
+</form>
