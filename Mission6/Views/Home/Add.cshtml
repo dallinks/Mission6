@@ -4,18 +4,19 @@
 
 @model Mission6.Models.ToDoItem;
 
-<h1>Add Task</h1>
+
+<h1 style="padding-left: 180px">Add Task</h1><br />
 
 <!--Input form to add tasks-->
-<form method="post">
+<form method="post" class="text-body">
     <!--Show data validation errors-->
     <div asp-validation-summary="All"></div>
 
     <label asp-for="Task">Task Description: </label>
-    <input asp-for="Task"/>
+    <input asp-for="Task"/><br /><br />
 
     <label asp-for="DueDate">Due Date: </label>
-    <input asp-for="DueDate"/>
+    <input asp-for="DueDate"/><br /><br />
 
     <label asp-for="Quadrant">Quadrant: </label>
     <select asp-for="Quadrant">
@@ -24,7 +25,7 @@
         <option value="2">Quadrant 2</option>
         <option value="3">Quadrant 3</option>
         <option value="4">Quadrant 4</option>
-    </select>
+    </select><br /><br />
 
     <label asp-for="CategoryId">Category: </label>
     <select asp-for="CategoryId">
@@ -35,13 +36,17 @@
         {
         <option value="@c.CategoryId">@c.CategoryName</option>
         }
-    </select>
+    </select><br /><br />
 
     <label asp-for="Completed">Completed: </label>
-    <select asp-for="Completed">
+    <select asp-for="Completed" style="width: 50px">
         <option value="false">No</option>
         <option value="true">Yes</option>
-    </select>
+    </select><br /><br />
 
-    <button type="submit" class="btn-light">Add</button>
+    <!--Container for styling the submit button-->
+    <div style="padding-left: 180px;">
+        <button type="submit" class="btn-primary">Add Task</button>
+    </div>
+
 </form>
