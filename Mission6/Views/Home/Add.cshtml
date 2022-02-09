@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData['Title'] = "Add Tasks";
+    ViewData["Title"] = "Add Tasks";
 }
 
 @model Mission6.Models.ToDoItem;
@@ -20,18 +20,18 @@
     <label asp-for="Quadrant">Quadrant: </label>
     <select asp-for="Quadrant">
         <option value="">Choose a Quadrant</option>
-        <option value="Quadrant_1">Quadrant 1</option>
-        <option value="Quadrant_2">Quadrant 2</option>
-        <option value="Quadrant_3">Quadrant 3</option>
-        <option value="Quadrant_4">Quadrant 4</option>
+        <option value="1">Quadrant 1</option>
+        <option value="2">Quadrant 2</option>
+        <option value="3">Quadrant 3</option>
+        <option value="4">Quadrant 4</option>
     </select>
 
-    <label asp-for="Category.CategoryName">Category: </label>
-    <select asp-for="Category.CategoryName">
+    <label asp-for="CategoryId">Category: </label>
+    <select asp-for="CategoryId">
         <option value="">Choose a category</option>
 
         <!--Loop through each category to populate the drop down (feel free to change the variable names as needed)-->
-        @foreach (Category c in ViewBag.Categories)
+        @foreach (Category c in ViewBag.Category)
         {
         <option value="@c.CategoryId">@c.CategoryName</option>
         }
@@ -39,7 +39,7 @@
 
     <label asp-for="Completed">Completed: </label>
     <select asp-for="Completed">
-        <opotion value="false">No</opotion>
+        <option value="false">No</option>
         <option value="true">Yes</option>
     </select>
 

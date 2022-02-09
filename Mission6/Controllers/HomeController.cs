@@ -17,11 +17,33 @@ namespace Mission6.Controllers
         {
             toDoContext = context;
         }
-
+        
         public IActionResult Index()
         {
             return View();
         }
-       
+        [HttpGet]
+        public IActionResult Add()
+        {
+            ViewBag.Category = toDoContext.Categories.ToList();
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(ToDoItem response)
+        {
+            if (ModelState.IsValid)
+            {
+                toDoContext.Add(response);
+                toDoContext.SaveChanges();
+                return View("Confirmation", response);
+            }
+            else
+            {
+                ViewBag.Category = toDoContext.Categories.ToList();
+                return View("Index");
+            }
+        }
+
     }
 }
