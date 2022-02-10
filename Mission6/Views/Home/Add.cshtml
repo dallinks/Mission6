@@ -5,35 +5,35 @@
 @model Mission6.Models.ToDoItem;
 
 
-<h1 style="padding-left: 180px">Add Task</h1><br />
+<h1 class="text-center">Add Task</h1>
 
 <!--Input form to add tasks-->
-<form method="post" class="text-body">
+<form method="post" class="text-center form">
 
     <!--Show data validation errors-->
-    <div asp-validation-summary="All"></div><br />
+    <div asp-validation-summary="All"></div>
 
     <!--Task Description-->
-    <label asp-for="Task">Task Description: </label>
-    <input asp-for="Task" /><br /><br />
+    <label class="form-label text-center" asp-for="Task">Task Description: </label>
+    <input class="form-control" asp-for="Task" />
 
     <!--Due Date-->
-    <label asp-for="DueDate">Due Date: </label>
-    <input asp-for="DueDate" /><br /><br />
+    <label class="form-label text-center" asp-for="DueDate">Due Date: </label>
+    <input class="form-control" asp-for="DueDate" />
 
     <!--Choose Quadrant-->
-    <label asp-for="Quadrant">Quadrant: </label><br />
-    <select asp-for="Quadrant">
+    <label class="form-label text-center" asp-for="Quadrant">Quadrant: </label><br />
+    <select class="custom-select" asp-for="Quadrant">
         <option value="">Choose a Quadrant</option>
         <option value="1">Quadrant 1</option>
         <option value="2">Quadrant 2</option>
         <option value="3">Quadrant 3</option>
         <option value="4">Quadrant 4</option>
-    </select><br /><br />
+    </select>
 
     <!--Choose Category-->
-    <label asp-for="CategoryId">Category: </label><br />
-    <select asp-for="CategoryId">
+    <label class="form-label text-center" asp-for="CategoryId">Category: </label><br />
+    <select class="custom-select" asp-for="CategoryId">
         <option value="">Choose a category</option>
 
         <!--Loop through each category to populate the drop down (feel free to change the variable names as needed)-->
@@ -41,19 +41,18 @@
         {
             <option value="@c.CategoryId">@c.CategoryName</option>
         }
-    </select><br /><br />
+    </select>
 
     <!--Completed-->
-    <label asp-for="Completed">Completed: </label><br />
-    <select asp-for="Completed">
+    <label class="form-label text-center" asp-for="Completed">Completed: </label><br />
+    <select class="custom-select" asp-for="Completed">
         <option value="false">No</option>
         <option value="true">Yes</option>
-    </select><br /><br />
+    </select>
 
-    <!--Container for styling the submit button-->
-    <div style="padding-left: 180px;">
-        <button type="submit" class="btn-primary">Add Task</button>
-    </div>
+
+    <button type="submit" style="margin-top: 10px;" class="btn btn-primary">Add Task</button>
+
 
     <!--Hidden input containing Id value-->
     <input type="hidden" asp-for="ToDoItemId" />
