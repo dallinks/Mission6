@@ -7,18 +7,21 @@
 
 <h1 style="padding-left: 180px">Add Task</h1><br />
 
-<p ></p>
 <!--Input form to add tasks-->
 <form method="post" class="text-body">
+
     <!--Show data validation errors-->
     <div asp-validation-summary="All"></div><br />
 
+    <!--Task Description-->
     <label asp-for="Task">Task Description: </label>
     <input asp-for="Task"/><br /><br />
 
+    <!--Due Date-->
     <label asp-for="DueDate">Due Date: </label>
     <input asp-for="DueDate"/><br /><br />
 
+    <!--Choose Quadrant-->
     <label asp-for="Quadrant">Quadrant: </label><br />
     <select asp-for="Quadrant">
         <option value="">Choose a Quadrant</option>
@@ -28,15 +31,23 @@
         <option value="4">Quadrant 4</option>
     </select><br /><br />
 
+    <!--Choose Category-->
     <label asp-for="CategoryId">Category: </label><br />
     <select asp-for="CategoryId">
         <option value="">Choose a category</option>
 
-        <!--Loop through each category to populate the drop down (feel free to change the variable names as needed)-->
+        <!--Loop through each category to populate the drop down-->
         @foreach (Category c in ViewBag.Category)
         {
         <option value="@c.CategoryId">@c.CategoryName</option>
         }
+    </select><br /><br />
+
+    <!--Completed-->
+    <label asp-for="Completed">Completed: </label><br />
+    <select asp-for="Completed">
+        <option value="false">No</option>
+        <option value="true">Yes</option>
     </select><br /><br />
 
     <!--Container for styling the submit button-->
@@ -44,12 +55,7 @@
         <button type="submit" class="btn-primary">Add Task</button>
     </div>
 
-    <label asp-for="Completed">Completed: </label><br />
-    <select asp-for="Completed">
-        <option value="false">No</option>
-        <option value="true">Yes</option>
-    </select><br /><br />
-
+    <!--Hidden input containing Id value-->
     <input type="hidden" asp-for="ToDoItemId" />
 
 </form>
