@@ -12,7 +12,7 @@
             <!--Loop through tasks that have a quadrant id of 1-->
             @foreach (var x in Model)
             {
-                @if (x.CategoryId == 1)
+                @if (x.Quadrant == 1)
                 {
                     <div style="padding-bottom:20px">
                         <h4>@x.Task</h4>
@@ -28,7 +28,7 @@
             <!--Loop through tasks that have a quadrant id of 2-->
             @foreach (var x in Model)
             {
-                @if (x.CategoryId == 2)
+                @if (x.Quadrant == 2)
                 {
                     <div style="padding-bottom:20px">
                         <h4>@x.Task</h4>
@@ -45,7 +45,7 @@
             <!--Loop through tasks that have a quadrant id of 3-->
             @foreach (var x in Model)
             {
-                @if (x.CategoryId == 3)
+                @if (x.Quadrant == 3)
 
                 {
                     <div style="padding-bottom:20px">
@@ -62,7 +62,7 @@
             <!--Loop through tasks that have a quadrant id of 4-->
             @foreach (var x in Model)
             {
-                @if (x.CategoryId == 4)
+                @if (x.Quadrant == 4)
 
                 {
                     <div style="padding-bottom:20px">

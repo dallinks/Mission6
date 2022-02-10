@@ -29,7 +29,7 @@ namespace Mission6.Controllers
         {
             ViewBag.Category = toDoContext.Categories.ToList();
 
-            return View();
+            return View(new ToDoItem());
         }
 
         [HttpPost]

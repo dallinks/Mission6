@@ -15,11 +15,11 @@
 
     <!--Task Description-->
     <label asp-for="Task">Task Description: </label>
-    <input asp-for="Task"/><br /><br />
+    <input asp-for="Task" /><br /><br />
 
     <!--Due Date-->
     <label asp-for="DueDate">Due Date: </label>
-    <input asp-for="DueDate"/><br /><br />
+    <input asp-for="DueDate" /><br /><br />
 
     <!--Choose Quadrant-->
     <label asp-for="Quadrant">Quadrant: </label><br />
@@ -36,10 +36,10 @@
     <select asp-for="CategoryId">
         <option value="">Choose a category</option>
 
-        <!--Loop through each category to populate the drop down-->
+        <!--Loop through each category to populate the drop down (feel free to change the variable names as needed)-->
         @foreach (Category c in ViewBag.Category)
         {
-        <option value="@c.CategoryId">@c.CategoryName</option>
+            <option value="@c.CategoryId">@c.CategoryName</option>
         }
     </select><br /><br />
 
