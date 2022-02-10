@@ -7,6 +7,7 @@
 
 <h1 style="padding-left: 180px">Add Task</h1><br />
 
+<p ></p>
 <!--Input form to add tasks-->
 <form method="post" class="text-body">
     <!--Show data validation errors-->
@@ -48,5 +49,7 @@
         <option value="false">No</option>
         <option value="true">Yes</option>
     </select><br /><br />
+
+    <input type="hidden" asp-for="ToDoItemId" />
 
 </form>

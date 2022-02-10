@@ -6,44 +6,63 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-6">
+        <div class="col-6 border">
             <h3>Quadrant 1</h3>
             @foreach (var x in Model)
             {
-                <h4>@x.Task</h4>
-                <h4>@x.DueDate</h4>
-                <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">Edit</a></h4>
-                <h4><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                @if (x.CategoryId == 1)
+                {
+                    <div style="padding-bottom:20px">
+                        <h4>@x.Task</h4>
+                        <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">    Edit</a>  <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                        <h4>@x.DueDate</h4>
+                    </div>
+                }
             }
         </div>
-        <div class="col-6">
+        <div class="col-6 border">
             <h3>Quadrant 2</h3>
             @foreach (var x in Model)
             {
-                <h4>@x.Task</h4>
-                <h4>@x.DueDate</h4>
-                <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">Edit</a></h4>
-                <h4><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                @if (x.CategoryId == 2)
+                {
+                    <div style="padding-bottom:20px">
+                        <h4>@x.Task</h4>
+                        <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">    Edit</a>  <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                        <h4>@x.DueDate</h4>
+                    </div>
+                }
             }
+
         </div>
-        <div class="col-6">
+        <div class="col-6 border">
             <h3>Quadrant 3</h3>
             @foreach (var x in Model)
             {
-                <h4>@x.Task</h4>
-                <h4>@x.DueDate</h4>
-                <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">Edit</a></h4>
-                <h4><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                @if (x.CategoryId == 3)
+
+                {
+                    <div style="padding-bottom:20px">
+                        <h4>@x.Task</h4>
+                        <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">    Edit</a>  <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                        <h4>@x.DueDate</h4>
+                    </div>
+                }
             }
         </div>
-        <div class="col-6">
+        <div class="col-6 border">
             <h3>Quadrant 4</h3>
             @foreach (var x in Model)
             {
-                <h4>@x.Task</h4>
-                <h4>@x.DueDate</h4>
-                <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">Edit</a></h4>
-                <h4><a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                @if (x.CategoryId == 4)
+
+                {
+                    <div style="padding-bottom:20px">
+                        <h4>@x.Task</h4>
+                        <h4><a asp-controller="Home" asp-action="Edit" asp-route-id="@x.ToDoItemId">    Edit</a>  <a asp-controller="Home" asp-action="Delete" asp-route-id="@x.ToDoItemId">Delete</a></h4>
+                        <h4>@x.DueDate</h4>
+                    </div>
+                }
             }
         </div>
     </div>

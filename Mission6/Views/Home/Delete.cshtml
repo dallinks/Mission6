@@ -13,7 +13,7 @@
 <h4>Complete? @Model.Completed</h4>
 
 <form method="post" asp-action="Delete">
-    <button type="submit">Delete</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
     <a asp-controller="Home" asp-action="Quadrants" class="btn btn-primary">Cancel</a>
     <input type="hidden" asp-for="ToDoItemId"/>
 </form>

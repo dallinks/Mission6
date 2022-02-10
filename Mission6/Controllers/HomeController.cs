@@ -35,6 +35,7 @@ namespace Mission6.Controllers
         [HttpPost]
         public IActionResult Add(ToDoItem response)
         {
+            
             if (ModelState.IsValid)
             {
                 toDoContext.Add(response);
@@ -44,7 +45,7 @@ namespace Mission6.Controllers
             else
             {
                 ViewBag.Category = toDoContext.Categories.ToList();
-                return View("Index");
+                return View("Add",response);
             }
         }
 
